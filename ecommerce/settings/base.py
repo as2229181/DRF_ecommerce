@@ -43,8 +43,10 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    #  DRF
+    #  External Packages
     "rest_framework",
+    "drf_spectacular",
+    "drf_spectacular_sidecar",  # required for Django collectstatic discovery
     #  Internal App
     "ecommerce.product",
 ]
@@ -135,3 +137,19 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 
 #   DRF settings
+REST_FRAMEWORK = {"DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema"}
+
+
+SPECTACULAR_SETTINGS = {
+    "TITLE": "Django ecommerce  DRF api",
+    "DESCRIPTION": "Practice How to build a website by DRF",
+    "VERSION": "1.0.0",
+    "SERVE_INCLUDE_SCHEMA": False,
+    # OTHER SETTINGS
+}
+SPECTACULAR_SETTINGS = {
+    "SWAGGER_UI_DIST": "SIDECAR",  # shorthand to use the sidecar instead
+    "SWAGGER_UI_FAVICON_HREF": "SIDECAR",
+    "REDOC_DIST": "SIDECAR",
+    # OTHER SETTINGS
+}
