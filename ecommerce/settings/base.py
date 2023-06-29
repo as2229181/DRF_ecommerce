@@ -45,6 +45,8 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     #  DRF
     "rest_framework",
+    #  Internal App
+    "ecommerce.product",
 ]
 
 MIDDLEWARE = [
@@ -133,10 +135,3 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 
 #   DRF settings
-REST_FRAMEWORK = {
-    # Use Django's standard `django.contrib.auth` permissions,
-    # or allow read-only access for unauthenticated users.
-    # 'DEFAULT_PERMISSION_CLASSES': [
-    #     'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
-    # ]
-}
